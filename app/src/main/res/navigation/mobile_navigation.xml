@@ -8,18 +8,18 @@
   <fragment
     android:id="@+id/navigation_home"
     android:label="@string/title_home"
-    android:name="edu.cnm.deepdive.quoteclient.ui.home.HomeFragment"
+    android:name="edu.cnm.deepdive.quoteclient.controller.HomeFragment"
     tools:layout="@layout/fragment_home"/>
 
   <fragment
     android:id="@+id/navigation_dashboard"
-    android:label="@string/title_dashboard"
-    android:name="edu.cnm.deepdive.quoteclient.ui.dashboard.DashboardFragment"
+    android:label="@string/title_quotes"
+    android:name="edu.cnm.deepdive.quoteclient.controller.DashboardFragment"
     tools:layout="@layout/fragment_dashboard"/>
 
   <fragment
     android:id="@+id/navigation_notifications"
-    android:label="@string/title_notifications"
-    android:name="edu.cnm.deepdive.quoteclient.ui.notifications.NotificationsFragment"
+    android:label="@string/title_sources"
+    android:name="edu.cnm.deepdive.quoteclient.controller.NotificationsFragment"
     tools:layout="@layout/fragment_notifications"/>
 </navigation>

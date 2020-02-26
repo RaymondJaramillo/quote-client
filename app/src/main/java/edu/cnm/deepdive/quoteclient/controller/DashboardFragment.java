@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.quoteclient.ui.dashboard;
+package edu.cnm.deepdive.quoteclient.controller;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

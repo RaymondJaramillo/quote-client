@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.quoteclient.ui.notifications;
+package edu.cnm.deepdive.quoteclient.controller;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
