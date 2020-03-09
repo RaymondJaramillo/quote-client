@@ -14,14 +14,15 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
 
 public interface QodService {
 
   @GET("quotes/random")
-  Single<Quote> getRandom();
+  Single<Quote> getRandom(@Header("Authorization") String oauthHeader);
 
   @GET("quotes")
-  Single<List<Quote>> getAll();
+  Single<List<Quote>> getAll(@Header("Authorization") String oauthHeader);
 
   static QodService getInstance() {
     return InstanceHolder.INSTANCE;

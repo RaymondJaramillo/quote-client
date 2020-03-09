@@ -1,9 +1,11 @@
 package edu.cnm.deepdive.quoteclient.controller;
 
+import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import edu.cnm.deepdive.quoteclient.model.Quote;
+import edu.cnm.deepdive.quoteclient.service.GoogleSignInService;
 import edu.cnm.deepdive.quoteclient.service.QuoteRepository;
 import io.reactivex.disposables.CompositeDisposable;
 
@@ -31,12 +33,21 @@ public class HomeViewModel extends ViewModel {
   }
 
   public void refresh() {
-    pending.add(
-        repository.getRandom()
-            .subscribe(
-                quote::postValue,
-                throwable::postValue
-            )
-    );
+    GoogleSignInService.getInstance().refresh()
+        .addOnSuccessListener((account) -> {
+          Log.d(getClass().getName(), account.getDisplayName());
+          Log.d(getClass().getName(), account.getIdToken());
+          Log.d(getClass().getName(), account.getEmail());
+          Log.d(getClass().getName(), account.getId());
+          pending.add(
+              repository.getRandom(account.getIdToken())
+                  .subscribe(
+                      quote::postValue,
+                      throwable::postValue
+                  )
+          );
+
+        })
+        .addOnFailureListener(throwable::postValue);
   }
 }
