@@ -3,6 +3,7 @@ package edu.cnm.deepdive.quoteclient.service;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Intent;
+import android.util.Log;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -51,6 +52,7 @@ public class GoogleSignInService {
 
   public Task<GoogleSignInAccount> refresh() {
     return client.silentSignIn()
+        .addOnSuccessListener((account) -> Log.d(getClass().getName(), account.getIdToken()))
         .addOnSuccessListener(this::update)
         .addOnFailureListener(this::update);
   }
