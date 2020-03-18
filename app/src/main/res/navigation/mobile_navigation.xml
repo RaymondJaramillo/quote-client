@@ -9,7 +9,7 @@
     android:id="@+id/navigation_random"
     android:label="@string/title_random"
     android:name="edu.cnm.deepdive.quoteclient.controller.RandomQuoteFragment"
-    tools:layout="@layout/fragment_home"/>
+    tools:layout="@layout/fragment_random_quote"/>
 
   <fragment
     android:id="@+id/navigation_quotes"

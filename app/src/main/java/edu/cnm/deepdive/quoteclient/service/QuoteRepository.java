@@ -37,7 +37,7 @@ public class QuoteRepository {
   }
 
   public Single<List<Source>> getAllSources(String token, boolean includeNull) {
-    return proxy.gerAllSources(String.format(OAUTH_HEADER_FORMAT, token), includeNull)
+    return proxy.getAllSources(String.format(OAUTH_HEADER_FORMAT, token), includeNull)
         .subscribeOn(Schedulers.from(networkPool));
   }
 

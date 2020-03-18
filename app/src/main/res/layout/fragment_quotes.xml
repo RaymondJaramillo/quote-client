@@ -9,6 +9,7 @@
     android:id="@+id/quotes_list"
     android:layout_width="0dp"
     android:layout_height="0dp"
+    android:padding="2dp"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     app:layout_constraintTop_toTopOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"

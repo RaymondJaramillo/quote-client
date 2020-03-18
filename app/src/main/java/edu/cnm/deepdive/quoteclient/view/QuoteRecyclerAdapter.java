@@ -7,17 +7,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import edu.cnm.deepdive.quoteclient.R;
 import edu.cnm.deepdive.quoteclient.model.Quote;
 import edu.cnm.deepdive.quoteclient.view.QuoteRecyclerAdapter.Holder;
 import java.util.List;
 
 public class QuoteRecyclerAdapter extends RecyclerView.Adapter<Holder> {
 
-
   // Necessary fields for adapting a collection to a RecyclerView:
-  // - Context
-  // - Collection
-  // - Listeners
+  //   - Context
+  //   - Collection
+  //   - Listeners
+
   private final Context context;
   private final List<Quote> quotes;
 
@@ -26,18 +27,15 @@ public class QuoteRecyclerAdapter extends RecyclerView.Adapter<Holder> {
     this.quotes = quotes;
   }
 
-  // Overrides of methods to:
-  // - return the number of items in the collection
-  // - return a holder instance for an inflated layout
-  // - binds a holder instance to an object at a specified position in the recycler view
-
+  // Overrides of methods to
+  //   - return the number of items in the collection
+  //   - return a holder instance for an inflated layout
+  //   - binds a holder instance to an object at a specified position in the recycler view
 
   @NonNull
   @Override
   public Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    // TODO Use a custom layout.
-    View root = LayoutInflater.from(context)
-        .inflate(android.R.layout.simple_list_item_1, parent, false);
+    View root = LayoutInflater.from(context).inflate(R.layout.item_quote, parent, false);
     return new Holder(root);
   }
 
@@ -51,27 +49,33 @@ public class QuoteRecyclerAdapter extends RecyclerView.Adapter<Holder> {
     return quotes.size();
   }
 
-  //  Holder class that:
-  // - Holds a inflated layout
-  // - Binds a specified object in the collection to the view objects in the inflated layout.
+  // Holder class that
+  //   - Holds an inflated layout
+  //   - Binds a specified object in the collection to the view objects in the inflated layout.
   class Holder extends RecyclerView.ViewHolder {
 
     private final View root;
-    // More fields for view objects inside root.
+    // More fields for view objects inside root
+    private final TextView quoteText;
+    private final TextView quoteSource;
 
     private Holder(View root) {
       super(root);
       this.root = root;
-      // TODO Find view objects by ID inside root
+      quoteText = root.findViewById(R.id.quote_text);
+      quoteSource = root.findViewById(R.id.quote_source);
     }
 
     private void bind(int position, Quote quote) {
-      // TODO set contexts of view fields to fields of quote
-      ((TextView) root).setText(quote.getText());
-      // TODO set any event listeners
+      quoteText.setText(quote.getText());
+      quoteSource.setText((quote.getSource() != null)
+          ? quote.getSource().getName() : context.getString(R.string.unattributed_source));
+      // TODO Set any event listeners.
     }
+
   }
 
-  // Event listener inteface definitions.
+  // Event listener interface declarations
 
 }
+

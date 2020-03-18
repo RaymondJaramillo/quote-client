@@ -5,4 +5,5 @@
   <string name="title_sources">Sources</string>
   <string name="login_failure">Unable to sign in with provided credentials.</string>
   <string name="sign_out">Sign out</string>
+  <string name="unattributed_source">(unattributed)</string>
 </resources>

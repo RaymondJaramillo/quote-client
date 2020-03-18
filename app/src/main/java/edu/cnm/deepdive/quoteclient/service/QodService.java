@@ -29,7 +29,7 @@ public interface QodService {
   Single<List<Quote>> getAll(@Header("Authorization") String oauthHeader);
 
   @GET("sources")
-  Single<List<Source>> gerAllSources(
+  Single<List<Source>> getAllSources(
       @Header("Authorization") String oauthHeader, @Query("includeNull") boolean includeNull);
 
   @POST("quotes")
@@ -45,9 +45,9 @@ public interface QodService {
     private static final QodService INSTANCE;
 
     static {
-      Gson gson = new GsonBuilder()
-          .excludeFieldsWithoutExposeAnnotation()
+      Gson gson  = new GsonBuilder()
           .setDateFormat(TIMESTAMP_FORMAT)
+          .excludeFieldsWithoutExposeAnnotation()
           .create();
       HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
       interceptor.setLevel(Level.BODY);
