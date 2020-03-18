@@ -8,14 +8,14 @@
   <fragment
     android:id="@+id/navigation_random"
     android:label="@string/title_random"
-    android:name="edu.cnm.deepdive.quoteclient.controller.HomeFragment"
+    android:name="edu.cnm.deepdive.quoteclient.controller.RandomQuoteFragment"
     tools:layout="@layout/fragment_home"/>
 
   <fragment
-    android:id="@+id/navigation_dashboard"
+    android:id="@+id/navigation_quotes"
     android:label="@string/title_quotes"
-    android:name="edu.cnm.deepdive.quoteclient.controller.DashboardFragment"
-    tools:layout="@layout/fragment_dashboard"/>
+    android:name="edu.cnm.deepdive.quoteclient.controller.QuotesFragment"
+    tools:layout="@layout/fragment_quotes"/>
 
   <fragment
     android:id="@+id/navigation_notifications"
