@@ -5,7 +5,7 @@ import java.net.URL;
 import java.util.Date;
 import java.util.UUID;
 
-public class Quote {
+public class Quote implements Content {
 
   @Expose
   private UUID id;

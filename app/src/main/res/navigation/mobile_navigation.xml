@@ -18,8 +18,8 @@
     tools:layout="@layout/fragment_quotes"/>
 
   <fragment
-    android:id="@+id/navigation_notifications"
-    android:label="@string/title_sources"
-    android:name="edu.cnm.deepdive.quoteclient.controller.NotificationsFragment"
-    tools:layout="@layout/fragment_notifications"/>
+    android:id="@+id/navigation_content"
+    android:label="@string/title_content"
+    android:name="edu.cnm.deepdive.quoteclient.controller.ContentFragment"
+    tools:layout="@layout/fragment_content"/>
 </navigation>

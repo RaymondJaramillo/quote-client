@@ -2,7 +2,7 @@
   <string name="app_name">Quote Client</string>
   <string name="title_random">Random</string>
   <string name="title_quotes">Quotes</string>
-  <string name="title_sources">Sources</string>
+  <string name="title_content">All</string>
   <string name="login_failure">Unable to sign in with provided credentials.</string>
   <string name="sign_out">Sign out</string>
   <string name="unattributed_source">(unattributed)</string>
